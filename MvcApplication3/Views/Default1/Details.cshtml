@@ -1,0 +1,36 @@
+﻿@model MvcApplication3.Models.ProgramModelProfile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ProgramModelProfile</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProgramName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProgramName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OwnerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OwnerName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Program)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Program)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProgramId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

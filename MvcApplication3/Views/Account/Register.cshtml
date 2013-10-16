@@ -1,0 +1,39 @@
+﻿@model MvcApplication3.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<hgroup class="title">
+    <h2>@ViewBag.Title.</h2>
+</hgroup>
+
+<section id="loginForm">
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>登録フォーム</legend>
+        <ul>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.TextBoxFor(m => m.Password)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.TextBoxFor(m => m.ConfirmPassword)
+            </li>
+        </ul>
+        <input type="submit" value="Register" />
+    </fieldset>
+}
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

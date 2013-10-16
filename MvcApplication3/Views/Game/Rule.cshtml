@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Rule";
+}
+
+<h2>Rule</h2>
+<div class="rule">
+    <div class="rule_menu"></div>
+    <p>
+        ブラウザゲーム<a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>のクローンゲームを解くBotを利用してできる限り条件を達成するためのBotを構成するゲームです。
+    </p>
+    <ol>
+        <li><a href="#idRule">ゲームのルール</a></li>
+        <li><a href="#idRuleOfRule">ゲームのルールのルール</a></li>
+    </ol>
+    <div class="rule_contents">
+        <div class="rule_content">
+            <div class="rule_content_title">
+                <div id="idRule">ゲームのルール</div>
+            </div>
+            <div>
+                ブラウザゲーム、<a href="http://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>を自動的に解くプログラムを所定の方法でブラウザ上で作成します。
+                プログラムはまずActionを作成し、ActionをOrderに並べることで作成します。
+            </div>
+            <div>
+                Actionは条件と購入対象の組のリストで表されます。
+                全ての条件が満たされた時、指定された購入対象を購入します。
+                条件は数値と数値の比較式で表されます。数値として用いることが出来るのは以下のリストです。
+                <ul>
+                    <li>入力値</li>
+                    <li>所持クッキー</li>
+                    <li>トータル生産クッキー</li>
+                    <li>Buildingからの収入</li>
+                    <li>Upgradeによってかかる倍率</li>
+                    <li>トータルでのCookie per Second</li>
+                    <li>各Buildingの数</li>
+                    <li>各Buildingの価格</li>
+                    <li>各UpGradeの有無</li>
+                    <li>各UpGradeの価格</li>
+                </ul>
+                また、購入対象を選択すると以下の条件が強制的に挿入されます。
+                <ul>
+                    <li>"所持金&gt;購入対象の価格"</li>
+                    <li>UpGradeの場合、その必要条件</li>
+                </ul>
+                購入可能なものは以下です。
+                <ul>
+                    <li>各Building(Clicker,Grandma,Farm,Factory,Mine,Shipment,AlchemyLab,Portal,Time machine)</li>
+                    <li>各Buildingの拡張UpGrade</li>
+                    <li>CpSを改善するUpGrade</li>
+                </ul>
+            </div>
+            <div class="rule_content_title">
+                <div id="idRuleOfRule">Coockie Clickerのルール</div>
+            </div>
+            <div>
+                内部的なルールはほぼ自動化されたCoockie Clickerと同様ですが、いくつか変更点があります。
+                <ul>
+                    <li>クリックの禁止 - マウスでのクリックによる収入はありません。よって、マウスでのクリックの効率を上げるUpGradeもありません。</li>
+                    <li>初期クッキーの追加 - マウスでのクリックがなければ収入を得られないため、初期状態ではClicker一つ分のクッキーを持った状態からスタートします。</li>
+                    <li>ゴールデンクッキー/レッドクッキーの削除 - ランダム性を排除するため、ゴールデンクッキーとレッドクッキーは存在しません。</li>
+                    <li>Building売却の禁止 - Buildingの売却を禁止します。売却に関連した実績も排除されています。</li>
+                    <li>ゴールの設定 - 元のゲームはいつまでも続きますが、こちらでは順位をつけるために全ての実績を取得すると終了します。</li>
+                </ul>
+            </div>
+            <div>
+                Buildingの価格
+                <a href="http://cookieclicker.wikia.com/wiki/Buildings">ここ</a>に準拠します。
+            </div>
+            <div>
+                UpGradeの価格
+                <a href="http://cookieclicker.wikia.com/wiki/Upgrades">ここ</a>に準拠します。
+                ただし、Other Upgradesの項目にある7個のUpgradeは存在しません。
+            </div>
+            <div>
+                実績
+                <a href="http://cookieclicker.wikia.com/wiki/Achievements">ここ</a>に準拠します。
+                ただし、クリック、売却、ゴールデンクッキーに関するものと、Cookie-dunker、デフォルトで非表示の実績に関しては扱いません。
+            </div>
+        </div>
+    </div>
+</div>

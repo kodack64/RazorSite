@@ -1,0 +1,7 @@
+*.dll
+*.mdf
+*.ldf
+*.pdb
+bin/
+obj/
+

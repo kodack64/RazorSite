@@ -1,0 +1,49 @@
+﻿
+@model IEnumerable<MvcApplication3.Models.ProgramModelProfile>
+
+@{
+    ViewBag.Title = "DashBoard";
+}
+
+<h2>DashBoard</h2>
+<ul>
+    <li>@Html.ActionLink("Create New", "Create", "Game")</li>
+</ul>
+
+@if (ViewBag.ProgramList.Count == 0) {
+    <div>まだプログラムがありません。</div>
+} else {
+    foreach (var item in ViewBag.ProgramList) {
+        <table>
+            <tr>
+                <th>
+                    プログラムID
+                </th>
+                <th>
+                    プログラム名
+                </th>
+                <th>
+                    所有者
+                </th>
+                <th>
+                    プログラム
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @item.ProgramId
+                </td>
+                <td>
+                    @item.ProgramName
+                </td>
+                <td>
+                    @item.OwnerName
+                </td>
+                <td>
+                    @item.Program
+                </td>
+            </tr>
+        </table>
+    }
+}
+

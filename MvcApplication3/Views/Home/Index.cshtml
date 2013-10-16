@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<hgroup class="title">
+    <h2>@ViewBag.Title</h2>
+</hgroup>
+
+<div class="main">
+    <div class="game">
+        <div class"gametitle">Game Menu</div>
+        @if (WebSecurity.IsAuthenticated) {
+            <div class="gamemenu">
+                <ul>
+                    <li><a href="~/Game/Rule">Rule</a></li>
+                    <li><a href="~/Game/DashBoard">DashBoard</a></li>
+                    <li><a href="~/Game/Ranking">Ranking</a></li>
+                </ul>
+            </div>
+        }else{
+            <div class="gamemenu">
+                <ul>
+                    <li>プレイするためにはログインしてください。</li>
+                </ul>
+            </div>
+        }
+    </div>
+</div>
